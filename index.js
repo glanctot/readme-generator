@@ -1,19 +1,18 @@
-const generatePage = () => {
-    return `
-    # ${projectName}
-    ### Description
-    this is similar to the about me content from the module
-    ## Table of Contents
-    1. [Installation](#Installation)
-    2. [Usage](#Usage)
-    3. [License](#License)
-    4. [Contributing](#Contributing)
-    5. [Tests](#Tests)
-    6. [Questions](#Questions)
-    ### Usage
-    `
-}
-console.log(generatePage());
+const fs = require("fs");
+
+const generatePage = require('./src/page-template.js')
+
+const projectDataArgs = process.argv.slice(2, process.argv.length);
+
+const project = projectDataArgs[0];
+
+
+
+fs.writeFile('readme.md', generatePage(project), err => {
+    if (err) throw err;
+
+    console.log('Markdown Complete.  Check readme.md to see the output');
+})
 
 // enter title for project, displayed as title for readme
 // enter description, installation instructions, usage info, contribution guidelines and test instructions then this info is added to corresponding sections
@@ -27,3 +26,13 @@ console.log(generatePage());
 // contributing: list any collaborators
 // tests: write tests for your application
 // questions: github username and email added to questions
+/* ### Description
+    this is similar to the about me content from the module
+    ## Table of Contents
+    1. [Installation](#Installation)
+    2. [Usage](#Usage)
+    3. [License](#License)
+    4. [Contributing](#Contributing)
+    5. [Tests](#Tests)
+    6. [Questions](#Questions)
+    ### Usage */
