@@ -59,37 +59,27 @@ const promptUser = readmeData => {
             }
         },
         {
-            type: 'confirm',
-            name: 'confirmCredits',
-            message: 'Would you like to enter some information for the credits section?',
-            default: true
-        },
-        {
             type: 'input',
             name: 'credits',
-            message: 'List any collaborators, third-party assets or tutorials.',
-            when: ({confirmCredits}) => {
-                if (confirmCredits) {
+            message: 'List any collaborators, third-party assets or tutorials. (Required)',
+            validate: credits => {
+                if (credits) {
                     return true;
                 } else {
+                    console.log('Please enter any credits.  If none type "none".');
                     return false;
                 }
             }
         },
         {
-            type: 'confirm',
-            name: 'confirmTests',
-            message: 'Would you like to enter some information for tests section?',
-            default: true
-        },
-        {
             type: 'input',
             name: 'tests',
             message: 'Write any tests for your application and provide examples on how to run them.',
-            when: ({confirmTests}) => {
-                if (confirmTests) {
+            validate: tests => {
+                if (tests) {
                     return true;
                 } else {
+                    console.log('Please enter any tests.  If none type "none".');
                     return false;
                 }
             }
@@ -98,7 +88,7 @@ const promptUser = readmeData => {
             type: 'checkbox',
             name: 'license',
             message: 'Choose a license would you like to include?',
-            choices: ['BSD 3', 'MIT', 'APACHE 2.0', 'GPL 3.0', 'None']
+            choices: ['BSD3', 'MIT', 'APACHE2.0', 'GPL3.0', 'None']
         },
         {
             type: 'input',
