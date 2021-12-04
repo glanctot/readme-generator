@@ -1,7 +1,10 @@
 const inquirer = require('inquirer');
+const generatePage = require('./src/page-template.js');
+const fs = require("fs");
+
 // add confirm for some questions
 
-const promptUser = () => {
+const promptUser = readmeData => {
     return inquirer.prompt([
         {
             type: 'input',
@@ -125,7 +128,16 @@ const promptUser = () => {
         }
     ])
 }
-    promptUser().then(answers => console.log(answers));
+    promptUser()
+    .then(readmeData => {
+        const pageRead = generatePage(readmeData);
+
+        fs.writeFile('readme.md', pageRead, err => {
+            if (err) throw err;
+        
+            console.log('Markdown Complete.  Check readme.md to see the output');
+        })
+    })
 /* const fs = require("fs");
 
 const generatePage = require('./src/page-template.js')
