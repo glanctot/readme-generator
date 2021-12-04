@@ -1,4 +1,5 @@
 const inquirer = require('inquirer');
+// add confirm for some questions
 
 const promptUser = () => {
     return inquirer.prompt([
@@ -55,19 +56,45 @@ const promptUser = () => {
             }
         },
         {
+            type: 'confirm',
+            name: 'confirmCredits',
+            message: 'Would you like to enter some information for the credits section?',
+            default: true
+        },
+        {
             type: 'input',
             name: 'credits',
-            message: 'List any collaborators, third-party assets or tutorials.'
+            message: 'List any collaborators, third-party assets or tutorials.',
+            when: ({confirmCredits}) => {
+                if (confirmCredits) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'confirm',
+            name: 'confirmTests',
+            message: 'Would you like to enter some information for tests section?',
+            default: true
         },
         {
             type: 'input',
             name: 'tests',
-            message: 'Write any tests for your application and provide examples on how to run them.'
+            message: 'Write any tests for your application and provide examples on how to run them.',
+            when: ({confirmTests}) => {
+                if (confirmTests) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
         },
         {
             type: 'checkbox',
             name: 'license',
-            message: 'What license would you like to include?',
+            message: 'Choose a license would you like to include?',
             choices: ['BSD 3', 'MIT', 'APACHE 2.0', 'GPL 3.0', 'None']
         },
         {
