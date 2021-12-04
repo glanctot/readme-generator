@@ -1,10 +1,107 @@
-const fs = require("fs");
+const inquirer = require('inquirer');
+
+const promptUser = () => {
+    return inquirer.prompt([
+        {
+            type: 'input',
+            name: 'name',
+            message: 'What is the title of your project? (Required)',
+            validate: projectName => {
+                if (projectName) {
+                    return true;
+                } else {
+                    console.log('Please enter a project name!');
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'description',
+            message: 'Provide a description of your project. (Required)',
+            validate: description => {
+                if (description) {
+                    return true;
+                } else {
+                    console.log('Please enter a description of your project!');
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'installation',
+            message: 'What are the steps required to install your project? (Required)',
+            validate: installation => {
+                if (installation) {
+                    return true;
+                } else {
+                    console.log('Please enter the steps to install your project!');
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'use',
+            message: 'Provide instructions and examples for use. (Required)',
+            validate: use => {
+                if (use) {
+                    return true;
+                } else {
+                    console.log('Please provide instructions and examples for use!');
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'credits',
+            message: 'List any collaborators, third-party assets or tutorials.'
+        },
+        {
+            type: 'input',
+            name: 'tests',
+            message: 'Write any tests for your application and provide examples on how to run them.'
+        },
+        {
+            type: 'checkbox',
+            name: 'license',
+            message: 'What license would you like to include?',
+            choices: ['BSD 3', 'MIT', 'APACHE 2.0', 'GPL 3.0', 'None']
+        },
+        {
+            type: 'input',
+            name: 'github',
+            message: 'Enter your github username. (Required)',
+            validate: githubName => {
+                if (githubName) {
+                    return true;
+                } else {
+                    console.log('Please enter your github username!');
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'email',
+            message: 'Enter your email address. (Required)',
+            validate: email => {
+                if (email) {
+                    return true;
+                } else {
+                    console.log('Please enter your email address!');
+                    return false;
+                }
+            }
+        }
+    ])
+}
+    promptUser().then(answers => console.log(answers));
+/* const fs = require("fs");
 
 const generatePage = require('./src/page-template.js')
-
-const projectDataArgs = process.argv.slice(2, process.argv.length);
-
-const project = projectDataArgs[0];
 
 
 
@@ -12,7 +109,7 @@ fs.writeFile('readme.md', generatePage(project), err => {
     if (err) throw err;
 
     console.log('Markdown Complete.  Check readme.md to see the output');
-})
+}) */
 
 // enter title for project, displayed as title for readme
 // enter description, installation instructions, usage info, contribution guidelines and test instructions then this info is added to corresponding sections

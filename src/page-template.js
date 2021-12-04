@@ -1,5 +1,5 @@
 const generatePage = (projectName) => {
-    return ` # ${projectName}
+    return `# ${projectName}
     
     `
 }
