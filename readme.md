@@ -7,7 +7,6 @@ https://github.com/glanctot/readme-generator
 * [Installation](#Installation)
 * [Usage](#Usage)
 * [Credits](#Credits)
-* [License](#License)
 ## Installation
 Must have Node.js installed.
 ## Usage
