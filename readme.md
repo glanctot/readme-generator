@@ -2,7 +2,7 @@
 ## Description
 A command line application that accepts user input.  When users are prompted for information then a professional README.MD is generated.  Readme displays the title of project, a description, a table of contents, installation instructions, usage, license, credits, and tests.  
 ## Link
-(
+(https://github.com/glanctot/readme-generator)
 ## Table of Contents
 * [Installation](#Installation)
 * [Usage](#Usage)
