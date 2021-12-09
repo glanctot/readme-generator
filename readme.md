@@ -1,8 +1,6 @@
-
-# Weather Dashboard
+# Readme Generator
 ## Description
-![Badge](https://img.shields.io/badge/license-APACHE2.0-blue)<br>
-Website to check the weather
+A command line application that accepts user input.  When users are prompted for information then a professional README.MD is generated.  Readme displays the title of project, a description, a table of contents, installation instructions, usage, license, credits, and tests.  
 ## Table of Contents
 * [Installation](#Installation)
 * [Usage](#Usage)
