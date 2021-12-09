@@ -2,23 +2,20 @@
 ## Description
 A command line application that accepts user input.  When users are prompted for information then a professional README.MD is generated.  Readme displays the title of project, a description, a table of contents, installation instructions, usage, license, credits, and tests.  
 ## Link
-(https://github.com/glanctot/readme-generator)
+https://github.com/glanctot/readme-generator
 ## Table of Contents
 * [Installation](#Installation)
 * [Usage](#Usage)
 * [Credits](#Credits)
 * [License](#License)
 ## Installation
-
+Must have Node.js installed.
 ## Usage
-oiquer a;ekjf qoier qek jfa;kdjfoqieu qoeiur qejf
+https://watch.screencastify.com/v/DpbSn0b7c7546AlaI0ma
+![reame-screenshot](https://user-images.githubusercontent.com/91084910/145429494-7fd0639e-de45-48f6-b758-59526a1045ce.JPG)
 ## Credits
 [W3 schools](https://www.w3schools.com/)
-## License
-This project is licensed under the APACHE2.0 license.
-## Tests
-laksjdf anvas kndqiowuer
+
 ## Questions
-Check out my GitHub profile at [glanctot](https://github.com/glanctot)<br>
-You can also reach me at my email: gregory.lanctot28@gmail.com
+You can reach me at my email: gregory.lanctot28@gmail.com
     
